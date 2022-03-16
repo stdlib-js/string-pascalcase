@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/string-pascalcase",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Convert a string to Pascal case.",
   "license": "Apache-2.0",
   "author": {
