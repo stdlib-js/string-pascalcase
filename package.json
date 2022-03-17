@@ -48,6 +48,7 @@
     "@stdlib/regexp-eol": "^0.0.x",
     "@stdlib/streams-node-stdin": "^0.0.x",
     "@stdlib/string-capitalize": "^0.0.x",
+    "@stdlib/string-format": "^0.0.x",
     "@stdlib/string-lowercase": "^0.0.x",
     "@stdlib/string-replace": "^0.0.x",
     "@stdlib/string-trim": "^0.0.x",
