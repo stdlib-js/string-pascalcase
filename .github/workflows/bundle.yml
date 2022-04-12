@@ -91,6 +91,7 @@ jobs:
           git config --local user.name "stdlib-bot"
       - name: Checkout `deno` branch
         run: |
+          git fetch --all
           git checkout -b deno origin/deno
       - name: Delete everything in current directory aside from deno folder
         run: |
@@ -177,6 +178,7 @@ jobs:
           git config --local user.name "stdlib-bot"
       - name: Checkout `umd` branch
         run: |
+          git fetch --all
           git checkout -b umd origin/umd
       - name: Delete everything in current directory aside from umd folder
         run: |
@@ -269,6 +271,7 @@ jobs:
           git config --local user.name "stdlib-bot"
       - name: Checkout `esm` branch
         run: |
+          git fetch --all
           git checkout -b esm origin/esm
       - name: Delete everything in current directory aside from esm folder
         run: |
