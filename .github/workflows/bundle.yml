@@ -85,18 +85,27 @@ jobs:
 
           # Create package.json file for deno branch:
           jq --indent 2 '{"name": .name, "version": .version, "description": .description, "license": .license, "type": "module", "main": "./mod.js", "homepage": .homepage, "repository": .repository, "bugs": .bugs, "keywords": .keywords, "funding": .funding}' package.json > ./deno/package.json
-
-      - name: Publish to deno branch
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./deno
-          publish_branch: deno
-          force_orphan: true
-          user_name: 'stdlib-bot'
-          user_email: 'noreply@stdlib.io'
-          commit_message: 'Auto-generated commit'
-          enable_jekyll: true
+      - name: Delete everything in current directory aside from deno folder
+        run: |
+          find . -type 'f' | grep -v "deno" | xargs rm
+          find . -type 'd' | grep -v "deno" | xargs rmdir
+      - name: Move deno directory to root
+        run: |
+          mv ./deno/* .
+          rmdir ./deno
+      - name: Configure git
+        run: |
+          git config --local user.email "noreply@stdlib.io"
+          git config --local user.name "stdlib-bot"
+      - name: Commit changes
+        run: |
+          git add -A
+          git commit -m "Transform error messages"
+      - name: Push changes
+        run: |
+          SLUG=${{ github.repository }}
+          echo "Pushing changes to $SLUG..."
+          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$SLUG.git" deno --force
       - name: Send status to Slack channel in case of failure
         uses: act10ns/slack@v1
         with:
