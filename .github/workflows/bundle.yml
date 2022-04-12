@@ -85,6 +85,16 @@ jobs:
 
           # Create package.json file for deno branch:
           jq --indent 2 '{"name": .name, "version": .version, "description": .description, "license": .license, "type": "module", "main": "./mod.js", "homepage": .homepage, "repository": .repository, "bugs": .bugs, "keywords": .keywords, "funding": .funding}' package.json > ./deno/package.json
+      - name: Configure git
+        run: |
+          git config --local user.email "noreply@stdlib.io"
+          git config --local user.name "stdlib-bot"
+      - name: Create new `deno` branch
+        run: |
+          git checkout -b deno
+      - name: Pull remote changes
+        run: |
+          git pull origin deno
       - name: Delete everything in current directory aside from deno folder
         run: |
           find . -type 'f' | grep -v -e "deno" -e ".git" | xargs rm
@@ -93,13 +103,6 @@ jobs:
         run: |
           mv ./deno/* .
           rmdir ./deno
-      - name: Configure git
-        run: |
-          git config --local user.email "noreply@stdlib.io"
-          git config --local user.name "stdlib-bot"
-      - name: Create new `deno` branch
-        run: |
-          git checkout -b deno
       - name: Commit changes
         run: |
           git add -A
@@ -108,7 +111,7 @@ jobs:
         run: |
           SLUG=${{ github.repository }}
           echo "Pushing changes to $SLUG..."
-          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$SLUG.git" deno --force
+          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$SLUG.git" deno
       - name: Send status to Slack channel in case of failure
         uses: act10ns/slack@v1
         with:
@@ -171,6 +174,16 @@ jobs:
 
           # Create package.json file for umd branch:
           jq --indent 2 '{"name": .name, "version": .version, "description": .description, "license": .license, "main": "./bundle.js", "homepage": .homepage, "repository": .repository, "bugs": .bugs, "keywords": .keywords, "funding": .funding}' package.json > ./umd/package.json
+      - name: Configure git
+        run: |
+          git config --local user.email "noreply@stdlib.io"
+          git config --local user.name "stdlib-bot"
+      - name: Create new `umd` branch
+        run: |
+          git checkout -b umd
+      - name: Pull remote changes
+        run: |
+          git pull origin umd
       - name: Delete everything in current directory aside from umd folder
         run: |
           find . -type 'f' | grep -v -e "umd" -e ".git" | xargs rm
@@ -179,13 +192,6 @@ jobs:
         run: |
           mv ./umd/* .
           rmdir ./umd
-      - name: Configure git
-        run: |
-          git config --local user.email "noreply@stdlib.io"
-          git config --local user.name "stdlib-bot"
-      - name: Create new `umd` branch
-        run: |
-          git checkout -b umd
       - name: Commit changes
         run: |
           git add -A
@@ -194,7 +200,7 @@ jobs:
         run: |
           SLUG=${{ github.repository }}
           echo "Pushing changes to $SLUG..."
-          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$SLUG.git" umd --force
+          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$SLUG.git" umd
       - name: Send status to Slack channel in case of failure
         uses: act10ns/slack@v1
         with:
@@ -263,6 +269,16 @@ jobs:
 
           # Create package.json file for esm branch:
           jq --indent 2 '{"name": .name, "version": .version, "description": .description, "license": .license, "type": "module", "main": "./index.mjs", "homepage": .homepage, "repository": .repository, "bugs": .bugs, "keywords": .keywords, "funding": .funding}' package.json > ./esm/package.json
+      - name: Configure git
+        run: |
+          git config --local user.email "noreply@stdlib.io"
+          git config --local user.name "stdlib-bot"
+      - name: Create new `esm` branch
+        run: |
+          git checkout -b esm
+      - name: Pull remote changes
+        run: |
+          git pull origin esm
       - name: Delete everything in current directory aside from esm folder
         run: |
           find . -type 'f' | grep -v -e "esm" -e ".git" | xargs rm
@@ -271,13 +287,6 @@ jobs:
         run: |
           mv ./esm/* .
           rmdir ./esm
-      - name: Configure git
-        run: |
-          git config --local user.email "noreply@stdlib.io"
-          git config --local user.name "stdlib-bot"
-      - name: Create new `esm` branch
-        run: |
-          git checkout -b esm
       - name: Commit changes
         run: |
           git add -A
@@ -286,7 +295,7 @@ jobs:
         run: |
           SLUG=${{ github.repository }}
           echo "Pushing changes to $SLUG..."
-          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$SLUG.git" esm --force
+          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$SLUG.git" esm
       - name: Send status to Slack channel in case of failure
         uses: act10ns/slack@v1
         with:
