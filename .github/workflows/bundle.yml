@@ -87,7 +87,7 @@ jobs:
           jq --indent 2 '{"name": .name, "version": .version, "description": .description, "license": .license, "type": "module", "main": "./mod.js", "homepage": .homepage, "repository": .repository, "bugs": .bugs, "keywords": .keywords, "funding": .funding}' package.json > ./deno/package.json
       - name: Delete everything in current directory aside from deno folder
         run: |
-          find . -type 'f' | grep -v "deno" | xargs rm
+          find . -type 'f' | grep -v -e "deno" -e ".git" | xargs rm
           find . -mindepth 1 -type 'd' | grep -v -e "deno" -e ".git" | xargs rm -rf
       - name: Move deno directory to root
         run: |
