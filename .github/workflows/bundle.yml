@@ -94,7 +94,7 @@ jobs:
           git checkout -b deno
       - name: Pull remote changes
         run: |
-          git pull origin deno --rebase
+          git pull origin deno --merge
       - name: Delete everything in current directory aside from deno folder
         run: |
           find . -type 'f' | grep -v -e "deno" -e ".git" | xargs rm
@@ -183,7 +183,7 @@ jobs:
           git checkout -b umd
       - name: Pull remote changes
         run: |
-          git pull origin umd --rebase
+          git pull origin umd --merge
       - name: Delete everything in current directory aside from umd folder
         run: |
           find . -type 'f' | grep -v -e "umd" -e ".git" | xargs rm
@@ -278,7 +278,7 @@ jobs:
           git checkout -b esm
       - name: Pull remote changes
         run: |
-          git pull origin esm --rebase
+          git pull origin esm --merge
       - name: Delete everything in current directory aside from esm folder
         run: |
           find . -type 'f' | grep -v -e "esm" -e ".git" | xargs rm
