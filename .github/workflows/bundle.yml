@@ -88,7 +88,7 @@ jobs:
       - name: Delete everything in current directory aside from deno folder
         run: |
           find . -type 'f' | grep -v "deno" | xargs rm
-          find . -mindepth 1 -type 'd' | grep -v "deno" | xargs rm -rf
+          find . -mindepth 1 -type 'd' | grep -v -e "deno" -e ".git" | xargs rm -rf
       - name: Move deno directory to root
         run: |
           mv ./deno/* .
