@@ -94,6 +94,7 @@ jobs:
           git checkout -b deno
       - name: Pull remote changes
         run: |
+          git config pull.ff only
           git pull origin deno
       - name: Delete everything in current directory aside from deno folder
         run: |
@@ -183,6 +184,7 @@ jobs:
           git checkout -b umd
       - name: Pull remote changes
         run: |
+          git config pull.ff only
           git pull origin umd
       - name: Delete everything in current directory aside from umd folder
         run: |
@@ -278,6 +280,7 @@ jobs:
           git checkout -b esm
       - name: Pull remote changes
         run: |
+          git config pull.ff only
           git pull origin esm
       - name: Delete everything in current directory aside from esm folder
         run: |
