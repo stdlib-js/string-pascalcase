@@ -97,10 +97,13 @@ jobs:
         run: |
           git config --local user.email "noreply@stdlib.io"
           git config --local user.name "stdlib-bot"
+      - name: Create new `deno` branch
+        run: |
+          git checkout -b deno
       - name: Commit changes
         run: |
           git add -A
-          git commit -m "Transform error messages"
+          git commit -m "Auto-generated commit"
       - name: Push changes
         run: |
           SLUG=${{ github.repository }}
