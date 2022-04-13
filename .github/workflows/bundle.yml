@@ -93,6 +93,11 @@ jobs:
         run: |
           git fetch --all
           git checkout -b deno origin/deno
+      - name: Rebase onto main branch
+        run: |
+          git rebase main
+          git add *
+          git rebase --continue
       - name: Delete everything in current directory aside from deno folder
         run: |
           find . -type 'f' | grep -v -e "deno" -e ".git" | xargs rm
@@ -180,6 +185,11 @@ jobs:
         run: |
           git fetch --all
           git checkout -b umd origin/umd
+      - name: Rebase onto main branch
+        run: |
+          git rebase main
+          git add *
+          git rebase --continue
       - name: Delete everything in current directory aside from umd folder
         run: |
           find . -type 'f' | grep -v -e "umd" -e ".git" | xargs rm
@@ -273,6 +283,11 @@ jobs:
         run: |
           git fetch --all
           git checkout -b esm origin/esm
+      - name: Rebase onto main branch
+        run: |
+          git rebase main
+          git add *
+          git rebase --continue
       - name: Delete everything in current directory aside from esm folder
         run: |
           find . -type 'f' | grep -v -e "esm" -e ".git" | xargs rm
