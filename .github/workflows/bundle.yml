@@ -97,7 +97,7 @@ jobs:
       - name: Rebase onto main branch
         run: |
           git rebase main
-          git add *
+          git add -A
           git rebase --continue
       - name: Delete everything in current directory aside from deno folder
         run: |
@@ -190,7 +190,7 @@ jobs:
       - name: Rebase onto main branch
         run: |
           git rebase main
-          git add *
+          git add -A
           git rebase --continue
       - name: Delete everything in current directory aside from umd folder
         run: |
@@ -289,7 +289,7 @@ jobs:
       - name: Rebase onto main branch
         run: |
           git rebase main
-          git add *
+          git add -A
           git rebase --continue
       - name: Delete everything in current directory aside from esm folder
         run: |
