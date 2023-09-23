@@ -44,7 +44,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import pascalcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@esm/index.mjs';
+import pascalcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@v0.1.0-esm/index.mjs';
 ```
 
 #### pascalcase( str )
@@ -84,7 +84,7 @@ out = pascalcase( 'fooBar' );
 <body>
 <script type="module">
 
-import pascalcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@esm/index.mjs';
+import pascalcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@v0.1.0-esm/index.mjs';
 
 var str = 'Hello World!';
 var out = pascalcase( str );
