@@ -37,89 +37,19 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
-<section class="installation">
 
-## Installation
 
-```bash
-npm install @stdlib/string-pascalcase
-```
 
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
--   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
-
-<section class="usage">
-
-## Usage
-
-```javascript
-var pascalcase = require( '@stdlib/string-pascalcase' );
-```
-
-#### pascalcase( str )
-
-Converts a string to Pascal case.
-
-```javascript
-var out = pascalcase( 'foo bar' );
-// returns 'FooBar'
-
-out = pascalcase( 'IS_MOBILE' );
-// returns 'IsMobile'
-
-out = pascalcase( 'Hello World!' );
-// returns 'HelloWorld'
-
-out = pascalcase( '--foo-bar--' );
-// returns 'FooBar'
-
-out = pascalcase( 'fooBar' );
-// returns 'FooBar'
-```
-
-</section>
-
-<!-- /.usage -->
 
 <!-- Package usage examples. -->
 
-<section class="examples">
 
-## Examples
 
-```javascript
-var pascalcase = require( '@stdlib/string-pascalcase' );
 
-var str = 'Hello World!';
-var out = pascalcase( str );
-// returns 'HelloWorld'
-
-str = 'HELLO WORLD!';
-out = pascalcase( str );
-// returns 'HelloWorld'
-
-str = 'To be, or not to be: that is the question.';
-out = pascalcase( str );
-// returns 'ToBeOrNotToBeThatIsTheQuestion'
-```
-
-</section>
-
-<!-- /.examples -->
-
-* * *
 
 <section class="cli">
 
-## CLI
+
 
 <section class="installation">
 
@@ -137,7 +67,7 @@ npm install -g @stdlib/string-pascalcase-cli
 
 <section class="usage">
 
-### Usage
+## Usage
 
 ```text
 Usage: pascalcase [options] [<string>]
@@ -153,29 +83,11 @@ Options:
 
 <!-- /.usage -->
 
-<section class="notes">
 
-### Notes
-
--   If the split separator is a [regular expression][mdn-regexp], ensure that the `split` option is either properly escaped or enclosed in quotes.
-
-    ```bash
-    # Not escaped...
-    $ echo -n $'beEp booP\nisMobile' | pascalcase --split /\r?\n/
-
-    # Escaped...
-    $ echo -n $'beEp booP\nisMobile' | pascalcase --split /\\r?\\n/
-    ```
-
--   The implementation ignores trailing delimiters.
-
-</section>
-
-<!-- /.notes -->
 
 <section class="examples">
 
-### Examples
+## Examples
 
 ```bash
 $ pascalcase 'hello world!'
@@ -209,6 +121,11 @@ IsMobile
 
 <section class="related">
 
+## See Also
+
+-   <span class="package-name">[`@stdlib/string-pascalcase`][@stdlib/string-pascalcase]</span><span class="delimiter">: </span><span class="description">convert a string to Pascal case.</span>
+
+
 </section>
 
 <!-- /.related -->
@@ -226,7 +143,7 @@ This package is part of [stdlib][stdlib], a standard library for JavaScript and 
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
-#### Community
+### Community
 
 [![Chat][chat-image]][chat-url]
 
@@ -249,8 +166,8 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 <section class="links">
 
-[npm-image]: http://img.shields.io/npm/v/@stdlib/string-pascalcase.svg
-[npm-url]: https://npmjs.org/package/@stdlib/string-pascalcase
+[npm-image]: http://img.shields.io/npm/v/@stdlib/string-pascalcase-cli.svg
+[npm-url]: https://npmjs.org/package/@stdlib/string-pascalcase-cli
 
 [test-image]: https://github.com/stdlib-js/string-pascalcase/actions/workflows/test.yml/badge.svg?branch=main
 [test-url]: https://github.com/stdlib-js/string-pascalcase/actions/workflows/test.yml?query=branch:main
