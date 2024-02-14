@@ -44,7 +44,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import pascalcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@deno/mod.js';
+import pascalcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@v0.2.0-deno/mod.js';
 ```
 
 #### pascalcase( str )
@@ -79,7 +79,7 @@ out = pascalcase( 'fooBar' );
 ## Examples
 
 ```javascript
-import pascalcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@deno/mod.js';
+import pascalcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@v0.2.0-deno/mod.js';
 
 var str = 'Hello World!';
 var out = pascalcase( str );
