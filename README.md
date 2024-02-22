@@ -44,6 +44,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import pascalcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/string-pascalcase/tags). For example,
+
+```javascript
 import pascalcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@v0.2.1-deno/mod.js';
 ```
 
@@ -79,7 +84,7 @@ out = pascalcase( 'fooBar' );
 ## Examples
 
 ```javascript
-import pascalcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@v0.2.1-deno/mod.js';
+import pascalcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@deno/mod.js';
 
 var str = 'Hello World!';
 var out = pascalcase( str );
