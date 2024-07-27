@@ -46,7 +46,7 @@ limitations under the License.
 To use in Observable,
 
 ```javascript
-pascalcase = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@umd/browser.js' )
+pascalcase = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@v0.2.2-umd/browser.js' )
 ```
 
 To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
@@ -58,7 +58,7 @@ var pascalcase = require( 'path/to/vendor/umd/string-pascalcase/index.js' )
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@v0.2.2-umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
@@ -106,7 +106,7 @@ out = pascalcase( 'fooBar' );
 <!DOCTYPE html>
 <html lang="en">
 <body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/string-pascalcase@v0.2.2-umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
 
